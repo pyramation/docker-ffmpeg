@@ -1,0 +1,13 @@
+#!/bin/bash
+
+USAGE="Usage: `basename $0` <infile> <outfilebasename>"
+
+if [ "$#" -ne "2" ]; then
+    echo "$USAGE"
+    exit 1
+fi
+
+file=$1
+out=$2
+
+avconv -i $file -vn -ar 44100 -ac 2 -ab 192k -f mp3 $out.mp3
