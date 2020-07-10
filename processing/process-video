@@ -10,6 +10,6 @@ fi
 file=$1
 out=$2
 
-avconv -i $file -acodec libvorbis -vcodec libtheora $out.ogv
-avconv -i $file -acodec libvorbis $out.webm
-avconv -i $file -acodec libfaac -ab 96k -vcodec libx264 -threads 0 $out.mp4
+ffmpeg -i $file -acodec libvorbis -vcodec libtheora $out.ogv
+ffmpeg -i $file -acodec libvorbis $out.webm
+ffmpeg -i $file -acodec libfaac -ab 96k -vcodec libx264 -threads 0 $out.mp4

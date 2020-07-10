@@ -10,4 +10,4 @@ fi
 file=$1
 out=$2
 
-avconv -i $file -vn -ar 44100 -ac 2 -ab 192k -f mp3 $out.mp3
+ffmpeg -i $file -vn -ar 44100 -ac 2 -ab 192k -f mp3 $out.mp3

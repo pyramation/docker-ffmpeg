@@ -1,14 +1,8 @@
-FROM ubuntu
+FROM jrottenberg/ffmpeg:3.1-alpine
 
-MAINTAINER Dan Lynch
+# https://hub.docker.com/r/jrottenberg/ffmpeg/
 
-RUN apt-get update
-RUN apt-get -y install build-essential curl git vim wget imagemagick screen file
-
-# ffmpeg is now deprecated (http://en.wikipedia.org/wiki/Libav)
-RUN apt-get -y install libav-tools
-
-# h264 and mp3
-RUN apt-get -y install libavcodec-extra-53
+# CMD         []
+ENTRYPOINT  ["/bin/sh"]
 
 ADD processing processing
